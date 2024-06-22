@@ -1,0 +1,35 @@
+name: Linter
+run-name: ${{ github.actor }} is attempting to make a ${{github.event_name}}.
+on: push
+
+jobs:
+  run-linters:
+    name: Run Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+          standalone: true
+          dest: ~/setup-pnpm
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: ^9
+      - name: Run Linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          eslint: true
+          prettier: true
+          auto_fix: true
+          git_name: "Unnamed Lint Action"
