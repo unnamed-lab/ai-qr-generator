@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Greet the contributor"
-        uses: garg3133/welcome-new-contributors@v1.2
+        uses: actions/first-interaction@v1
         with:
-          token: ${{ secrets.UNNAMED_ALERT_BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           is-oauth-token: true
-          issue-message: "Hello @contributor_name, thanks for opening your first issue. We welcome you to the ${{ github.event.repository.name }} community!"
-          pr-message: "Hello @contributor_name, thanks for opening your first Pull Request. Someone will review it soon."
+          issue-message: "Hello there 👋 Thanks for opening your first issue. We welcome you to the ${{ github.event.repository.name }} community!"
+          pr-message: "Hello there 👋 Thanks for opening your first Pull Request. Someone will review it soon."
