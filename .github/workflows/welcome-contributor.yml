@@ -1,5 +1,5 @@
 name: Greet New Contributor
-run-name: ${{ github.actor }} icontributed to ${{github.repository}}.
+run-name: ${{ github.actor }} contributed to ${{github.repository}}.
 on:
   issues:
     types: [opened]
