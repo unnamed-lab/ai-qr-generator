@@ -1,5 +1,5 @@
 name: Search & Update Issue Label by Unnamed
-run-name: ${{github.actor}} added an issue to ${{github.repository}}
+run-name: ${{github.actor}} opened an issue.
 on:
   issues:
     types:

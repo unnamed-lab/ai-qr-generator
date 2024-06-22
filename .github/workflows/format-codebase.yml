@@ -1,5 +1,5 @@
 name: Format Codebase w/ Prettier
-run-name: ${{ github.actor }} is attempting to make a ${{github.event_name}} to ${{github.repository}}
+run-name: ${{ github.actor }} is attempting to make a ${{github.event_name}}.
 on:
   pull_request:
     branches:
