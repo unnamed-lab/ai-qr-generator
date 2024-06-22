@@ -15,6 +15,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -36,3 +37,4 @@ jobs:
           prettier_options: --write **/*.{js,ts,jsx,tsx,css} --tab-width 4
           prettier_plugins: "prettier-plugin-tailwindcss"
           only_changed: True
+          github_token: ${{ secrets.GITHUB_TOKEN }}
