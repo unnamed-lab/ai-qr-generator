@@ -111,7 +111,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: "Identify new component request"
+      - name: "Identify new documentation request"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
