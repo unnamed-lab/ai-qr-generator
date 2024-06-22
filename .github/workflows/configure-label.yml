@@ -4,9 +4,14 @@ on:
   issues:
     types:
       - opened
+      - reopened
 jobs:
   error:
-    if: startsWith(${{github.event.issue.title}}, 'bug' || 'bugs' || '[bug]' ) || contains(${{github.event.issue.title}}, 'bug')
+    if: |
+      startsWith(github.event.issue.title, 'bug') ||
+      startsWith(github.event.issue.title, 'bugs') ||
+      startsWith(github.event.issue.title, '[bug]') ||
+      contains(github.event.issue.title, 'bug')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -20,7 +25,15 @@ jobs:
           LABELS: bug
 
   help:
-    if: startsWith(${{github.event.issue.title}}, 'fix' || '[fix]' ) ||  contains(${{github.event.issue.title}}, 'help' || 'help needed' || 'HELP' || 'HELP NEEDED' || 'assist' || 'typo')
+    if: |
+      startsWith(github.event.issue.title, 'fix') ||
+      startsWith(github.event.issue.title, '[fix]') ||
+      contains(github.event.issue.title, 'help') ||
+      contains(github.event.issue.title, 'help needed') ||
+      contains(github.event.issue.title, 'HELP') ||
+      contains(github.event.issue.title, 'HELP NEEDED') ||
+      contains(github.event.issue.title, 'assist') ||
+      contains(github.event.issue.title, 'typo')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -34,7 +47,10 @@ jobs:
           LABELS: help wanted
 
   question:
-    if: startsWith(${{github.event.issue.title}}, 'question' || '[question]' ) || contains(${{github.event.issue.title}}, 'question')
+    if: |
+      startsWith(github.event.issue.title, 'question') ||
+      startsWith(github.event.issue.title, '[question]') ||
+      contains(github.event.issue.title, 'question')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -48,7 +64,13 @@ jobs:
           LABELS: question
 
   feature:
-    if: startsWith(${{github.event.issue.title}}, 'feature' || '[feature]', 'enhancement' || '[enhancement]' ) || contains(${{github.event.issue.title}}, 'enhancement' || 'feature')
+    if: |
+      startsWith(github.event.issue.title, 'feature') ||
+      startsWith(github.event.issue.title, '[feature]') ||
+      startsWith(github.event.issue.title, 'enhancement') ||
+      startsWith(github.event.issue.title, '[enhancement]') ||
+      contains(github.event.issue.title, 'enhancement') ||
+      contains(github.event.issue.title, 'feature')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -62,7 +84,10 @@ jobs:
           LABELS: enhancement
 
   component:
-    if: startsWith(${{github.event.issue.title}}, 'component' || '[component]' ) || contains(${{github.event.issue.title}}, 'component')
+    if: |
+      startsWith(github.event.issue.title, 'component') ||
+      startsWith(github.event.issue.title, '[component]') ||
+      contains(github.event.issue.title, 'component')
     runs-on: ubuntu-latest
     permissions:
       issues: write
