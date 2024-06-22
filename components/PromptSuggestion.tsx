@@ -20,6 +20,7 @@ export const PromptSuggestion: React.FC<PromptSuggestionProps> = ({
         !isLoading ? "cursor-pointer" : "cursor-not-allowed"
       } transition hover:bg-gray-100`}
     >
+      {" "}
       {suggestion}
     </button>
   );

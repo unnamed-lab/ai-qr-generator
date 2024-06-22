@@ -8,6 +8,7 @@ const NavLink = ({ children, href, ...props }: any) => (
       props?.className || ""
     }`}
   >
+    {" "}
     {children}
   </Link>
 );

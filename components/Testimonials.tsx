@@ -79,10 +79,11 @@ const Testimonials = () => {
                       <span className="mt-0.5 block text-sm text-gray-600">
                         {item.title}
                       </span>
-                    </div>
-                  </div>
+                    </div>{" "}
+                  </div>{" "}
                   <blockquote>
-                    <p className="mt-6 text-gray-700">{item.quote}</p>
+                    {" "}
+                    <p className="mt-6 text-gray-700">{item.quote}</p>{" "}
                   </blockquote>
                 </figure>
               </li>
