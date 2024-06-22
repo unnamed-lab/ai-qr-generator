@@ -1,12 +1,12 @@
-import { cn } from '@/utils/utils';
-import React from 'react';
+import { cn } from "@/utils/utils";
+import React from "react";
 
 export function V0Logo({
   width = 40,
   height,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<'svg'>) {
+}: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       width={width}
@@ -14,7 +14,7 @@ export function V0Logo({
       viewBox="0 0 40 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn('text-zinc-950', className)}
+      className={cn("text-zinc-950", className)}
       {...props}
     >
       <path

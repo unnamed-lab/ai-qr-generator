@@ -1,7 +1,7 @@
-import { kv } from '@vercel/kv';
-import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
-import Body from '@/components/Body';
+import { kv } from "@vercel/kv";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import Body from "@/components/Body";
 
 async function getAllKv(id: string) {
   const data = await kv.hgetall<{
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   const title = `QrGPT: ${data.prompt}`;
   const description = `A QR code generated from qrGPT.io linking to: ${data.website_url}`;
-  const image = data.image || 'https://qrGPT.io/og-image.png';
+  const image = data.image || "https://qrGPT.io/og-image.png";
 
   return {
     title,
@@ -43,11 +43,11 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [image],
-      creator: '@nutlope',
+      creator: "@nutlope",
     },
   };
 }

@@ -1,10 +1,10 @@
-import { replicateClient } from '@/utils/ReplicateClient';
-import { QrGenerateRequest, QrGenerateResponse } from '@/utils/service';
-import { NextRequest } from 'next/server';
+import { replicateClient } from "@/utils/ReplicateClient";
+import { QrGenerateRequest, QrGenerateResponse } from "@/utils/service";
+import { NextRequest } from "next/server";
 // import { Ratelimit } from '@upstash/ratelimit';
-import { kv } from '@vercel/kv';
-import { put } from '@vercel/blob';
-import { nanoid } from '@/utils/utils';
+import { kv } from "@vercel/kv";
+import { put } from "@vercel/blob";
+import { nanoid } from "@/utils/utils";
 
 /**
  * Validates a request object.
@@ -15,10 +15,10 @@ import { nanoid } from '@/utils/utils';
 
 const validateRequest = (request: QrGenerateRequest) => {
   if (!request.url) {
-    throw new Error('URL is required');
+    throw new Error("URL is required");
   }
   if (!request.prompt) {
-    throw new Error('Prompt is required');
+    throw new Error("Prompt is required");
   }
 };
 
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     num_inference_steps: 30,
     guidance_scale: 5,
     negative_prompt:
-      'Longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, blurry',
+      "Longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, blurry",
   });
 
   const endTime = performance.now();
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
   const file = await fetch(imageUrl).then((res) => res.blob());
 
   // upload & store in Vercel Blob
-  const { url } = await put(`${id}.png`, file, { access: 'public' });
+  const { url } = await put(`${id}.png`, file, { access: "public" });
 
   await kv.hset(id, {
     prompt: reqBody.prompt,

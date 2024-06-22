@@ -1,9 +1,9 @@
 const CTA = () => (
   <SectionWrapper>
     <div className="custom-screen">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="mx-auto max-w-2xl text-center">
         <h2
-          className="text-gray-800 text-3xl font-semibold sm:text-4xl"
+          className="text-3xl font-semibold text-gray-800 sm:text-4xl"
           id="oss"
         >
           QrGPT is Proudly Open Source
@@ -13,7 +13,7 @@ const CTA = () => (
         </p>
         <a
           href="https://github.com/Nutlope/qrGPT"
-          className="mt-4 inline-flex justify-center items-center gap-2 font-medium text-sm text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900 max-w-[200px] py-2.5 px-4 text-center rounded-lg duration-150"
+          className="mt-4 inline-flex max-w-[200px] items-center justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2.5 text-center text-sm font-medium text-white duration-150 hover:bg-gray-600 active:bg-gray-900"
         >
           <svg
             aria-hidden="true"
@@ -29,7 +29,7 @@ const CTA = () => (
 );
 
 const SectionWrapper = ({ children, ...props }: any) => (
-  <section {...props} className={`py-16 ${props.className || ''}`}>
+  <section {...props} className={`py-16 ${props.className || ""}`}>
     {children}
   </section>
 );

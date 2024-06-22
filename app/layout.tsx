@@ -1,25 +1,25 @@
-import Navbar from '@/components/Navbar';
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Footer from '@/components/Footer';
-import { Analytics } from '@vercel/analytics/react';
-import PlausibleProvider from 'next-plausible';
+import Navbar from "@/components/Navbar";
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import PlausibleProvider from "next-plausible";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
-let title = 'QrGPT - QR Code Generator';
-let description = 'Generate your AI QR Code in seconds';
-let url = 'https://www.qrgpt.io';
-let ogimage = 'https://www.qrgpt.io/og-image.png';
-let sitename = 'qrGPT.io';
+let title = "QrGPT - QR Code Generator";
+let description = "Generate your AI QR Code in seconds";
+let url = "https://www.qrgpt.io";
+let ogimage = "https://www.qrgpt.io/og-image.png";
+let sitename = "qrGPT.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title,
   description,
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
   openGraph: {
     images: [ogimage],
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     description,
     url: url,
     siteName: sitename,
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: [ogimage],
     title,
     description,

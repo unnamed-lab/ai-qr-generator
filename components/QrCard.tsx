@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 type QrCardProps = {
   imageURL?: string;
@@ -15,15 +15,15 @@ export const QrCard: React.FC<QrCardProps> = ({ imageURL, time }) => {
   }
 
   return (
-    <div className="relative flex flex-col justify-center items-center gap-y-2 w-[510px] border border-gray-300 rounded shadow group p-2 mx-auto max-w-full">
+    <div className="group relative mx-auto flex w-[510px] max-w-full flex-col items-center justify-center gap-y-2 rounded border border-gray-300 p-2 shadow">
       <Image
         src={imageURL}
-        className="rounded "
+        className="rounded"
         alt="qr code"
         width={480}
         height={480}
       />
-      <p className="text-gray-400 text-sm italic">
+      <p className="text-sm italic text-gray-400">
         QR code took {time} seconds to generate.
       </p>
     </div>
