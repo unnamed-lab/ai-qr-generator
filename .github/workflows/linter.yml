@@ -25,14 +25,14 @@ jobs:
         name: Install pnpm
         with:
           version: ^9
-          
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Run Linters
         uses: panda0603/lint-action@1.6.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.UNNAMED_ALERT_BOT_TOKEN}}
           eslint: true
           prettier: true
           auto_fix: true
