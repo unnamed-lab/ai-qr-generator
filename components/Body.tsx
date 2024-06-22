@@ -57,17 +57,6 @@ const Body = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-
-
-
-
-
-
-
-
-
-
-
   const [response, setResponse] = useState<QrGenerateResponse | null>(null);
   const [submittedURL, setSubmittedURL] = useState<string | null>(null);
 
@@ -89,14 +78,6 @@ const Body = ({
       setResponse({
         image_url: imageUrl,
 
-
-
-
-
-
-
-
-
         model_latency_ms: modelLatency,
         id: id,
       });
@@ -110,11 +91,6 @@ const Body = ({
   const handleSuggestionClick = useCallback(
     (suggestion: string) => {
       form.setValue("prompt", suggestion);
-
-
-
-
-
     },
     [form],
   );
@@ -130,19 +106,7 @@ const Body = ({
           url: values.url,
           prompt: values.prompt,
         };
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-          
-        
+
         const response = await fetch("/api/generate", {
           method: "POST",
           body: JSON.stringify(request),
@@ -158,31 +122,12 @@ const Body = ({
 
         const data = await response.json();
 
-
-
-
-
-
-
-
-
-
         va.track("Generated QR Code", {
           prompt: values.prompt,
         });
 
         router.push(`/start/${data.id}`);
       } catch (error) {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
         va.track("Failed to generate", {
           prompt: values.prompt,
         });
@@ -193,12 +138,7 @@ const Body = ({
         setIsLoading(false);
       }
     },
-   
-   
-   
-   
-   
-   
+
     [router],
   );
 
@@ -207,14 +147,7 @@ const Body = ({
       <div className="mt-10 grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
         <div className="col-span-1">
           <h1 className="mb-10 text-3xl font-bold">Generate a QR Code</h1>
-         
-         
-         
-         
-         
-         
-         
-         
+
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)}>
               <div className="flex flex-col gap-4">
@@ -222,26 +155,11 @@ const Body = ({
                   control={form.control}
                   name="url"
                   render={({ field }) => (
-         
-         
-         
-         
-         
-         
-         
-         
-         <FormItem>
+                    <FormItem>
                       {" "}
                       <FormLabel>URL</FormLabel>{" "}
                       <FormControl>
                         <Input placeholder="roomgpt.io" {...field} />
-                   
-                   
-                   
-                   
-                   
-                   
-                   
                       </FormControl>{" "}
                       <FormDescription>
                         This is what your QR code will link to.{" "}
@@ -250,13 +168,7 @@ const Body = ({
                     </FormItem>
                   )}
                 />
-        
-        
-        
-        
-        
-        
-        
+
                 <FormField
                   control={form.control}
                   name="prompt"
@@ -265,26 +177,13 @@ const Body = ({
                       <FormLabel>Prompt</FormLabel>
                       <FormControl>
                         <Textarea
-                 
-                 
-                 
-                 
-                 
-                 
-                 
-                 placeholder="A city view with clouds"
+                          placeholder="A city view with clouds"
                           className="resize-none"
                           {...field}
                         />
                       </FormControl>{" "}
                       <FormDescription className="">
-                        This is what the image in your QR code will look 
-                        
-                        
-                        
-                        
-                        
-                        like.{" "}
+                        This is what the image in your QR code will look like.{" "}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -292,18 +191,7 @@ const Body = ({
                 />
                 <div className="my-2">
                   <p className="mb-3 text-sm font-medium">Prompt suggestions</p>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
                   <div className="grid grid-cols-1 gap-3 text-center text-sm text-gray-500 sm:grid-cols-2">
                     {promptSuggestions.map((suggestion) => (
                       <PromptSuggestion
@@ -312,14 +200,7 @@ const Body = ({
                         onClick={() => handleSuggestionClick(suggestion)}
                         isLoading={isLoading}
                       />
-        
-        
-        
-        
-        
-        
-        
-        ))}
+                    ))}
                   </div>
                 </div>
                 <Button
