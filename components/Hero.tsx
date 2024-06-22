@@ -15,6 +15,16 @@ export default function Hero() {
             Generate your next AI QR Code in seconds
           </h1>{" "}
           <p className="mx-auto max-w-xl">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
             QRGPT makes it simple for you to generate cool looking AI QR codes
             in seconds, completely for free.
           </p>
@@ -24,10 +34,19 @@ export default function Hero() {
               href="/start"
               className="bg-gray-800 text-white hover:bg-gray-600 active:bg-gray-900"
             >
+    
+    
+    
               Generate your QR Code
             </NavLink>
             <NavLink
-              target="_blank"
+    
+    
+    
+    
+    
+    
+    target="_blank"
               href="https://github.com/Nutlope/qrGPT"
               className="border text-gray-700 hover:bg-gray-50"
               scroll={false}
@@ -38,15 +57,21 @@ export default function Hero() {
           <div className="grid grid-cols-2 gap-4 pt-10 sm:grid-cols-3">
             {heroImages.map((image, idx) => (
               <Image
-                key={idx}
+    
+    
+    
+              key={idx}
                 alt="image"
                 src={image}
                 width={500}
                 height={500}
+    
+    
                 className="rounded-lg"
               />
             ))}
           </div>
+     
         </div>
       </div>
     </section>
