@@ -20,6 +20,7 @@ jobs:
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          is-oauth-token: true
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: bug
@@ -42,6 +43,7 @@ jobs:
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          is-oauth-token: true
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: help wanted
@@ -59,6 +61,7 @@ jobs:
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          is-oauth-token: true
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: question
@@ -79,6 +82,7 @@ jobs:
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          is-oauth-token: true
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: enhancement
@@ -95,7 +99,8 @@ jobs:
       - name: "Identify new component request"
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.UNNAMED_ALERT_BOT_TOKEN }}
+          is-oauth-token: true
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: component
