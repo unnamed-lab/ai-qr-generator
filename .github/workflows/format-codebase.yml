@@ -5,13 +5,15 @@ on:
     branches:
       - main
 jobs:
-  setup-env:
+  prettier:
     runs-on: ubuntu-latest
     env:
       RUNNER_TOOL_CACHE: /toolcache
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,21 +28,11 @@ jobs:
         with:
           version: ^9
 
-  install-deps:
-    runs-on: ubuntu-latest
-    needs: setup-env
-
-    steps:
       - name: Checkout Codebase
         uses: actions/checkout@v4
 
       - name: Install dependencies
         run: pnpm install
 
-  prettier:
-    runs-on: ubuntu-latest
-    needs: install-deps
-
-    steps:
-      - name: Runs Prettier
+      - name: Run Prettier
         run: pnpm format
