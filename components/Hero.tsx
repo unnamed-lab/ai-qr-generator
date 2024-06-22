@@ -9,13 +9,18 @@ export default function Hero() {
   return (
     <section>
       <div className="custom-screen pt-28 text-gray-600">
-        <div className="mx-auto max-w-4xl space-y-5 text-center"> <h1 className="mx-auto text-4xl font-extrabold text-gray-800 sm:text-6xl">
+        <div className="mx-auto max-w-4xl space-y-5 text-center">
+          {" "}
+          <h1 className="mx-auto text-4xl font-extrabold text-gray-800 sm:text-6xl">
             Generate your next AI QR Code in seconds
-          </h1> <p className="mx-auto max-w-xl">
+          </h1>{" "}
+          <p className="mx-auto max-w-xl">
             QRGPT makes it simple for you to generate cool looking AI QR codes
             in seconds, completely for free.
           </p>
-          <div className="flex items-center justify-center gap-x-3 text-sm font-medium"> <NavLink
+          <div className="flex items-center justify-center gap-x-3 text-sm font-medium">
+            {" "}
+            <NavLink
               href="/start"
               className="bg-gray-800 text-white hover:bg-gray-600 active:bg-gray-900"
             >

@@ -6,7 +6,9 @@ const Footer = () => (
       <div className="mt-10 flex items-center justify-between border-t py-10">
         <p className="text-gray-600">
           Created by{" "}
-          <a href="https://twitter.com/nutlope" className="transition hover:underline"
+          <a
+            href="https://twitter.com/nutlope"
+            className="transition hover:underline"
           >
             Hassan
           </a>{" "}
@@ -25,7 +27,8 @@ const Footer = () => (
             href="https://v0.dev/"
             target="_blank"
           >
-            <span className="text-gray-500">Built with</span> <V0Logo width={25} />
+            <span className="text-gray-500">Built with</span>{" "}
+            <V0Logo width={25} />
           </a>
         </div>
       </div>
