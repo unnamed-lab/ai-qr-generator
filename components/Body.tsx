@@ -150,15 +150,10 @@ const Body = ({
                   control={form.control}
                   name="url"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>URL</FormLabel>
-                      <FormControl>
+                    <FormItem> <FormLabel>URL</FormLabel> <FormControl>
                         <Input placeholder="roomgpt.io" {...field} />
-                      </FormControl>
-                      <FormDescription>
-                        This is what your QR code will link to.
-                      </FormDescription>
-                      <FormMessage />
+                      </FormControl> <FormDescription>
+                        This is what your QR code will link to. </FormDescription> <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -170,14 +165,10 @@ const Body = ({
                       <FormLabel>Prompt</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="A city view with clouds"
-                          className="resize-none"
-                          {...field}
+                          placeholder="A city view with clouds"  className="resize-none" {...field}
                         />
-                      </FormControl>
-                      <FormDescription className="">
-                        This is what the image in your QR code will look like.
-                      </FormDescription>
+                      </FormControl>  <FormDescription className="">
+                        This is what the image in your QR code will look like. </FormDescription>
 
                       <FormMessage />
                     </FormItem>
@@ -188,9 +179,7 @@ const Body = ({
                   <div className="grid sm:grid-cols-2 grid-cols-1 gap-3 text-center text-gray-500 text-sm">
                     {promptSuggestions.map((suggestion) => (
                       <PromptSuggestion
-                        key={suggestion}
-                        suggestion={suggestion}
-                        onClick={() => handleSuggestionClick(suggestion)}
+                        key={suggestion} suggestion={suggestion} onClick={() => handleSuggestionClick(suggestion)}
                         isLoading={isLoading}
                       />
                     ))}

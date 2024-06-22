@@ -80,9 +80,7 @@ const Testimonials = () => {
                         {item.title}
                       </span>
                     </div>
-                  </div>
-                  <blockquote>
-                    <p className="mt-6 text-gray-700">{item.quote}</p>
+                  </div> <blockquote> <p className="mt-6 text-gray-700">{item.quote}</p>
                   </blockquote>
                 </figure>
               </li>
