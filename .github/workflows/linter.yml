@@ -14,19 +14,8 @@ jobs:
         with:
           node-version: 20
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: false
-          standalone: true
-          dest: ~/setup-pnpm
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: ^9
       - name: Run Linters
-        uses: wearerequired/lint-action@v1
+        uses: panda0603/lint-action@1.6.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
           eslint: true
