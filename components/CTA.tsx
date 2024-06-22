@@ -5,13 +5,10 @@ const CTA = () => (
         <h2
           className="text-3xl font-semibold text-gray-800 sm:text-4xl"
           id="oss"
-        >
-          QrGPT is Proudly Open Source
-        </h2>
-        <p className="mt-3 text-gray-600">
+        > QrGPT is Proudly Open Source
+        </h2> <p className="mt-3 text-gray-600">
           Our source code is available on GitHub.
-        </p>
-        <a
+        </p>  <a
           href="https://github.com/Nutlope/qrGPT"
           className="mt-4 inline-flex max-w-[200px] items-center justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2.5 text-center text-sm font-medium text-white duration-150 hover:bg-gray-600 active:bg-gray-900"
         >

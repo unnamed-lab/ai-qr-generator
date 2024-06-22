@@ -62,11 +62,10 @@ const Testimonials = () => {
         </div>
         <div className="mt-12">
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((item, idx) => (
-              <li key={idx} className="rounded-xl border bg-white p-4">
+            {testimonials.map((item, idx) => ( <li key={idx} className="rounded-xl border bg-white p-4">
                 <figure>
                   <div className="flex items-center gap-x-4">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */} 
                     <img
                       src={item.avatar}
                       className="h-14 w-14 rounded-full object-cover"
@@ -79,9 +78,7 @@ const Testimonials = () => {
                       <span className="mt-0.5 block text-sm text-gray-600">
                         {item.title}
                       </span>
-                    </div>
-                  </div> <blockquote> <p className="mt-6 text-gray-700">{item.quote}</p>
-                  </blockquote>
+                    </div> </div> <blockquote> <p className="mt-6 text-gray-700">{item.quote}</p> </blockquote>
                 </figure>
               </li>
             ))}
