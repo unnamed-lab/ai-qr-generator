@@ -7,7 +7,9 @@ const NavLink = ({ children, href, ...props }: any) => (
     className={`rounded-lg px-4 py-2.5 text-center duration-150 ${
       props?.className || ""
     }`}
-  >  {children}
+  >
+    {" "}
+    {children}
   </Link>
 );
 
