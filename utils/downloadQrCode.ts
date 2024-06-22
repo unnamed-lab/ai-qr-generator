@@ -1,5 +1,5 @@
 function forceDownload(blobUrl: string, filename: string) {
-  let a: any = document.createElement('a');
+  let a: any = document.createElement("a");
   a.download = filename;
   a.href = blobUrl;
   document.body.appendChild(a);
@@ -12,7 +12,7 @@ export default function downloadQrCode(url: string, filename: string) {
     headers: new Headers({
       Origin: location.origin,
     }),
-    mode: 'cors',
+    mode: "cors",
   })
     .then((response) => response.blob())
     .then((blob) => {
