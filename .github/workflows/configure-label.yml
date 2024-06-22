@@ -20,7 +20,7 @@ jobs:
           LABELS: bug
 
   help:
-    if: contains(${{github.event.issue.title}}, 'help' || 'help needed' || 'HELP' || 'HELP NEEDED' || 'assist')
+    if: startsWith(${{github.event.issue.title}}, 'fix' || '[fix]' ) ||  contains(${{github.event.issue.title}}, 'help' || 'help needed' || 'HELP' || 'HELP NEEDED' || 'assist' || 'typo')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -59,18 +59,18 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-          LABELS: question
+          LABELS: enhancement
 
   component:
-    if: startsWith(${{github.event.issue.title}}, 'component' || '[component]' ) || contains(${{github.event.issue.title}}, 'enhancement' || 'component')
+    if: startsWith(${{github.event.issue.title}}, 'component' || '[component]' ) || contains(${{github.event.issue.title}}, 'component')
     runs-on: ubuntu-latest
     permissions:
       issues: write
     steps:
-      - name: "Identify new feature request"
+      - name: "Identify new component request"
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-          LABELS: question
+          LABELS: component
