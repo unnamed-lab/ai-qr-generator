@@ -19,6 +19,7 @@ on:
 
 jobs:
   automerge:
+    name: Auto Merge Bot
     runs-on: ubuntu-latest
     permissions:
       contents: write
