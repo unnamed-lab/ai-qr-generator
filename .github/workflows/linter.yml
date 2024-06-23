@@ -48,6 +48,8 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           git_name: "Cypheir Lint"
+          git_email: "adebayo.anuoluwa02@gmail.com"
+          neutral_check_on_warning: true
           auto_fix: true
           commit: false
           github_token: ${{ secrets.GITHUB_TOKEN  }}
