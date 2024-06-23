@@ -1,0 +1,31 @@
+name: Auto Merge After Two Pull Request Reveiew
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  auto_merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get branch name
+        id: branch
+        run: echo "::set-output name=branch_name::${{ github.ref }}"
+      - name: Check reviews
+        id: reviews
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const reviews = await github.pulls.listReviews({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+            const approvedReviews = reviews.data.filter(review => review.state === 'APPROVED');
+            core.setOutput('approvedReviews', approvedReviews.length);
+      - name: Auto-merge if reviews >= 1
+        if: steps.reviews.outputs.approvedReviews >= 1
+        run: |
+          gh pr merge --auto --delete-branch --squash "${{ steps.branch.outputs.branch_name }}"
