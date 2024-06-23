@@ -54,7 +54,7 @@ jobs:
           neutral_check_on_warning: true
           github_token: ${{ secrets.GITHUB_TOKEN  }}
           prettier: true
-          # prettier_extensions: js,ts,jsx,tsx,md,mdx,css,scss,json
+          prettier_extensions: css,html,js,json,jsx,md,sass,scss,ts,tsx,vue
           prettier_auto_fix: true
           eslint: true
           # eslint_extensions: js,ts,jsx,tsx,md,mdx

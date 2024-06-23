@@ -16,7 +16,7 @@ on:
   check_suite:
     types:
       - completed
-      
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
