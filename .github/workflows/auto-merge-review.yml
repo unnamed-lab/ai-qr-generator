@@ -1,6 +1,10 @@
 name: Auto Merge After Two Pull Request Reveiew
 
 on:
+  workflow_run:
+    workflows: ["Cypheir Linter"]
+    types:
+      - completed
   pull_request:
     types:
       - opened
