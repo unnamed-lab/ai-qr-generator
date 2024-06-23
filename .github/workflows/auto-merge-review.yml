@@ -1,35 +1,31 @@
-name: Auto Merge After Two Pull Request Reveiew
-
+name: automerge
 on:
-  workflow_run:
-    workflows: ["Cypheir Linter"]
-    types:
-      - completed
   pull_request:
     types:
-      - opened
+      - labeled
+      - unlabeled
       - synchronize
-
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+      
 jobs:
-  auto_merge:
+  automerge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Get branch name
-        id: branch
-        run: echo "::set-output name=branch_name::${{ github.ref }}"
-      - name: Check reviews
-        id: reviews
-        uses: actions/github-script@v5
-        with:
-          script: |
-            const reviews = await github.pulls.listReviews({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-            const approvedReviews = reviews.data.filter(review => review.state === 'APPROVED');
-            core.setOutput('approvedReviews', approvedReviews.length);
-      - name: Auto-merge if reviews >= 1
-        if: steps.reviews.outputs.approvedReviews >= 1
-        run: |
-          gh pr merge --auto --delete-branch --squash "${{ steps.branch.outputs.branch_name }}"
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.16.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_REQUIRED_APPROVALS: "1"

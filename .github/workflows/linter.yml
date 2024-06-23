@@ -59,3 +59,4 @@ jobs:
           eslint: true
           # eslint_extensions: js,ts,jsx,tsx,md,mdx
           eslint_auto_fix: true
+          commit_message: "[fix] codebase style issues with ${linter}"
