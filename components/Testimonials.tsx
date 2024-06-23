@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Testimonials = () => {
   const testimonials = [
     {
@@ -68,7 +66,8 @@ const Testimonials = () => {
               <li key={idx} className="rounded-xl border bg-white p-4">
                 <figure>
                   <div className="flex items-center gap-x-4">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={item.avatar}
                       className="h-14 w-14 rounded-full object-cover"
                       alt={item.name}

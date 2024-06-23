@@ -1,7 +1,6 @@
 {
   "extends": "next",
   "rules": {
-    "no-unused-vars": "error",
-    "@next/next/no-img-element": "off"
+    "no-unused-vars": "error"
   }
 }
