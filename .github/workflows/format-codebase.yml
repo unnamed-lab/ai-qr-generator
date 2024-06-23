@@ -37,4 +37,4 @@ jobs:
           prettier_options: --write **/*.{js,ts,jsx,tsx,css} --tab-width 4
           prettier_plugins: "prettier-plugin-tailwindcss"
           only_changed: True
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.UNNAMED_BOT_TOKEN }}
