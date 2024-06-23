@@ -34,7 +34,7 @@ jobs:
       - name: Run Eslint
         uses: panda0603/lint-action@1.6.3
         with:
-          github_token: ${{ secrets.UNNAMED_BOT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN  }}
           eslint: true
           eslint_extensions: js,ts,jsx,tsx,md,mdx
 
@@ -73,9 +73,7 @@ jobs:
       - name: Run Linters
         uses: panda0603/lint-action@1.6.3
         with:
-          github_token: ${{ secrets.UNNAMED_BOT_TOKEN }}
-          eslint: true
-          eslint_extensions: js,ts,jsx,tsx,md,mdx
+          github_token: ${{ secrets.GITHUB_TOKEN  }}
           prettier: true
           prettier_extensions: js,ts,jsx,tsx,md,mdx,css,scss,json
           auto_fix: true

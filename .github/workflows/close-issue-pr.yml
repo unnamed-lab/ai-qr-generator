@@ -23,4 +23,4 @@ jobs:
           #   stale-pr-message: "This pull request was closed because it has been inactive for -- days since being marked as stale."
           exempt-issue-labels: "bug,enhancement"
           exempt-pr-labels: "bug,enhancement"
-          repo-token: ${{ secrets.UNNAMED_BOT_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN  }}
